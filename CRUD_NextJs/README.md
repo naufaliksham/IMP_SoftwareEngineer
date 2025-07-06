@@ -5,8 +5,14 @@ post, and delete post.
 - Use DaisyUI for components.
 
 ## How to Run a Project
-1. ```npm install```
-2. ```npm run dev```
+1. Install Dependencies
+```
+npm install
+```
+2. Run Project
+```
+npm run dev
+```
 
 ## Open Project
 url = [http://localhost:3000](http://localhost:3000)
