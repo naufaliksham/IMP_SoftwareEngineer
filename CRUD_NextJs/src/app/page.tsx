@@ -24,7 +24,6 @@ export default async function HomePage() {
               <h2 className="card-title">{post.title}</h2>
               <p>{post.content.substring(0, 80)}...</p>
               <div className="card-actions justify-end mt-4 space-x-2">
-                <Link href={`/posts/${post.id}`} className="btn btn-secondary btn-sm">Lihat</Link>
                 <Link href={`/posts/edit/${post.id}`} className="btn btn-accent btn-sm">Edit</Link>
                 <DeleteButton id={post.id} />
               </div>
