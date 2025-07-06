@@ -14,4 +14,7 @@ cd CRUDAuth_Django
 ```
 
 ### Clone This Repository
+```
+git clone https://github.com/naufaliksham/IMP_SoftwareEngineer.git
+```
 ### Each project's guide is already in the project directory (README.md)
