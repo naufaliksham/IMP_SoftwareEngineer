@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Hapus Akun</h2>
+  <p>Apakah Anda yakin ingin menghapus akun Anda? Tindakan ini tidak dapat diurungkan.</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" style="background-color: red; color: white;">Ya, Hapus Akun Saya</button>
+    <a href="{% url 'home' %}">Batal</a>
+  </form>
+{% endblock %}
