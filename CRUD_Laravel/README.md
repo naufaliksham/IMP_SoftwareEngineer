@@ -19,7 +19,13 @@ php artisan key:generate
 ```
 4. _Optional_, to replace the new database.sqlite
 ```
-rm database/database.sqlite && cp database/database_example.sqlite database/database.sqlite && php artisan migrate
+rm database/database.sqlite
+```
+```
+cp database/database_example.sqlite database/database.sqlite
+```
+```
+php artisan migrate
 ```
 5. _Optional_, for data seeding
 ```
