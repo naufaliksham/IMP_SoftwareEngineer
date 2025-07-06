@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h2>Hapus Akun</h2>
-  <p>Apakah Anda yakin ingin menghapus akun Anda? Tindakan ini tidak dapat diurungkan.</p>
-  <form method="post">
-    {% csrf_token %}
-    <button type="submit" style="background-color: red; color: white;">Ya, Hapus Akun Saya</button>
-    <a href="{% url 'home' %}">Batal</a>
-  </form>
+<div class="pt-4 flex justify-center">
+  <div class="card w-full max-w-sm bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title">Delete Account</h2>
+      <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-control mt-6">
+          <button type="submit" class="btn btn-error">Yes, Delete My Account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
