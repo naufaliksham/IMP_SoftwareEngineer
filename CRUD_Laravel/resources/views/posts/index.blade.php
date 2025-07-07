@@ -10,22 +10,22 @@
         <table class="table table-zebra">
             <thead class="text-base">
                 <tr>
-                    <th></th>
+                    <th>No</th>
                     <th>Title</th>
                     <th>Content</th>
                     <th class="text-center">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @php $number = 1; @endphp
+                @php $number = ($posts->currentPage() - 1) * $posts->perPage() + 1; @endphp
                 @forelse ($posts as $post)
                     <tr>
-                        <th>{{ $number }}</th>
+                        <th>{{ $number++ }}</th>
                         <td>{{ $post->title }}</td>
                         <td>{{ Str::limit($post->content, 50) }}</td>
                         <td class="flex justify-center gap-2">
                             <a href="{{ route('posts.edit', $post) }}" class="btn btn-sm btn-accent">Edit</a>
-                            
+
                             <form action="{{ route('posts.destroy', $post) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus post ini?');">
                                 @csrf
                                 @method('DELETE')
@@ -33,7 +33,6 @@
                             </form>
                         </td>
                     </tr>
-                    @php $number++; @endphp
                 @empty
                     <tr>
                         <td colspan="4" class="text-center p-8">Belum ada postingan.</td>
@@ -41,5 +40,9 @@
                 @endforelse
             </tbody>
         </table>
+    </div>
+
+    <div class="mt-6">
+        {{ $posts->links() }}
     </div>
 @endsection
